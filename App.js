@@ -25,7 +25,7 @@ function DrawerRoutes(){
 function App(){
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login' screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName='Login' screenOptions={{headerShown: false}} >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name='Home' component={DrawerRoutes} />
       </Stack.Navigator>
@@ -33,6 +33,10 @@ function App(){
   );
 
 }
+
+const drawerstyles = StyleSheet.create({
+
+})
 
 
 export default App;

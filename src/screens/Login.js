@@ -1,9 +1,31 @@
 import react from "react";
 import { StyleSheet, View, Text, TouchableOpacity, TextInput } from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
-import { CheckBox } from "react-native-web";
 
 var logo ="<Scan N Go>";
+
+/* fetch('https://integrative-api.herokuapp.com/students', {
+    method: 'GET',
+    headers:{
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+
+    })
+}); */
+
+const LoginURL = "https://integrative-api.herokuapp.com/students";
+
+const students = async()=>{
+    try{
+        const request = await fetch();
+        const response = await request.json();
+
+    }catch(err){
+        throw Error(err);
+    }
+}
 
 function Login(props){
     return(
@@ -19,7 +41,6 @@ function Login(props){
                 <Text style={styles.welcome}>{logo}</Text>
                 <TextInput placeholder="StudentID" style={styles.inputtext}></TextInput>
                 <TextInput placeholder="Password" style={styles.inputtext} secureTextEntry={true}></TextInput>
-                {/* <Button title = "Signin" onPress={()=> props.navigation.replace('Home')}/> */}
                 <TouchableOpacity title="Signin" style={styles.button} onPress={()=> props.navigation.replace('Home')}>
                     <Text style={styles.buttontext}>Login</Text>
                 </TouchableOpacity>
